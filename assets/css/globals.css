@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #C9A96E;
+    --color-secondary: #8B7355;
+    --color-accent: #E5D4B8;
+    --color-dark: #0A0A0A;
+    --color-dark-secondary: #151515;
+    --color-dark-tertiary: #1F1F1F;
+    --color-light: #F8F6F3;
+    --color-white: #FFFFFF;
+    --color-text: #E8E8E8;
+    --color-text-secondary: #B0B0B0;
+    --color-text-light: #808080;
+    --color-border: #2A2A2A;
+    --color-success: #6B9C7A;
+    --color-overlay: rgba(10, 10, 10, 0.8);
+    
+    --font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}

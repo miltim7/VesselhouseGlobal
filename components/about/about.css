@@ -1,0 +1,331 @@
+.about {
+    padding: 120px 0 100px;
+    background-color: var(--color-dark);
+}
+
+.about__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about__header {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about__header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about__subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.about__title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.about__description {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.about__main-section {
+    margin-bottom: 50px;
+}
+
+.about__left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.about__left-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about__text {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about__gallery-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.about__gallery-bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.about__gallery-bottom.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about__gallery-item {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about__gallery-top .about__gallery-item:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.about__gallery-top .about__gallery-item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.about__gallery-bottom .about__gallery-item:nth-child(1) {
+    transition-delay: 0.5s;
+}
+
+.about__gallery-bottom .about__gallery-item:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.about__gallery-bottom .about__gallery-item:nth-child(3) {
+    transition-delay: 0.7s;
+}
+
+.about__gallery-bottom .about__gallery-item:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.about__gallery-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about__gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.about__gallery-top .about__gallery-item {
+    aspect-ratio: 1.4;
+}
+
+.about__gallery-bottom .about__gallery-item {
+    aspect-ratio: 0.75;
+}
+
+.about__gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.about__lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    animation: fadeIn 0.3s ease;
+}
+
+.about__lightbox.active {
+    display: flex;
+}
+
+.about__lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.about__lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.about__lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(201, 169, 110, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10000;
+}
+
+.about__lightbox-close:hover {
+    background: rgba(201, 169, 110, 0.4);
+    transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about {
+        padding: 80px 0;
+    }
+    
+    .about__title {
+        font-size: 42px;
+    }
+    
+    .about__main-section {
+        margin-bottom: 40px;
+    }
+    
+    .about__gallery-bottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+    
+    .about__header {
+        margin-bottom: 50px;
+    }
+    
+    .about__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .about__description {
+        font-size: 17px;
+    }
+    
+    .about__main-section {
+        margin-bottom: 30px;
+    }
+    
+    .about__left-content {
+        gap: 30px;
+    }
+    
+    .about__text {
+        font-size: 17px;
+    }
+    
+    .about__gallery-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about__gallery-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about__gallery-item {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .about__lightbox {
+        padding: 20px;
+    }
+    
+    .about__lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about__title {
+        font-size: 28px;
+    }
+    
+    .about__description {
+        font-size: 16px;
+    }
+    
+    .about__text {
+        font-size: 16px;
+    }
+    
+    .about__gallery-item {
+        max-width: 400px;
+    }
+}
