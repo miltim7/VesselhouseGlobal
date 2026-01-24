@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Vessel House</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2.0">
+    <meta name="theme-color" content="#0A0A0A">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/globals.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+
+    <style>
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            font-family: var(--font-primary);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .terms-container {
+            flex: 1;
+            /* Отступ сверху, чтобы не наезжал хедер */
+            padding: 140px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .terms-content {
+            background: var(--color-dark-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--color-primary); /* Золотистый из globals */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+        /* Золотистые буллиты */
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--color-primary); 
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 120px 16px 40px;
+            }
+            .terms-content {
+                padding: 24px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo" id="header-logo-link">
+                    <span class="header__logo-text">VESSEL</span>
+                    <span class="header__logo-subtitle">HOUSE</span>
+                </a>
+                <nav class="header__nav">
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="terms-container">
+        <a href="index.html" class="back-link" id="back-link">← Back to Home</a>
+        <div class="terms-content">
+            <h1>Terms & Conditions</h1>
+            <ul>
+                <li>Website content is provided for general information and does not constitute a binding offer.</li>
+                <li>Supply of modular units/materials (if applicable) is provided under a separate Sales Contract/Tax Invoice.</li>
+                <li>On-site works, installation/assembly and fit-out (if requested) are provided under a separate Service Agreement/SOW.</li>
+                <li>Such works may be delivered by certified third-party partners engaged for the project.</li>
+                <li>Scope, timelines, responsibilities, acceptance and warranties are defined in the signed contract documents.</li>
+                <li>Project delivery may be subject to site conditions, permits and relevant authority approvals where applicable.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__left">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-text">VESSEL</span>
+                        <span class="footer__logo-subtitle">HOUSE</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Vessel House. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const backLink = document.getElementById('back-link');
+            const logoLink = document.getElementById('header-logo-link');
+            
+            if (document.referrer && document.referrer.includes('/ar')) {
+                const arPath = 'ar/index.html';
+                backLink.href = arPath;
+                logoLink.href = arPath;
+            } else {
+                const enPath = 'index.html';
+                backLink.href = enPath;
+                logoLink.href = enPath;
+            }
+        });
+    </script>
+</body>
+</html>
